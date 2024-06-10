@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <nav>
+            
+            <div class="menu-icon">
+                &#9776; <!-- Puedes cambiar esto a &#8942; para puntos verticales -->
+            </div>
+            <div class="nav-links">
+                <!-- Enlace para la página de inicio -->
+                <a href="#" onclick="cargarContenido('inicio')">Inicio</a>
+                <!-- Enlace para la página de servicios -->
+                <a href="#" onclick="cargarContenido('servicios')">Servicios</a>
+                <!-- Enlace para la página de contacto -->
+                <a href="#" onclick="cargarContenido('contacto')">Contacto</a>
+                <!-- Enlace para la página de acerca de nosotros -->
+                <a href="#" onclick="cargarContenido('acerca')">Acerca de nosotros</a>
+
+            </div>
+            <div class="nav-buttons">
+                <button class="login-button" onclick="location.href='login.html'">Iniciar Sesión</button>
+                <button class="register-button" onclick="location.href='register.html'">Registrarse</button>
+            </div>
+        </nav>
+    </header>
+    <div class="content-container"></div>
+        <main>
+            
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 BUENASALUD. Todos los derechos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        // Esta función se ejecutará cuando la página haya terminado de cargar
+        window.onload = function() {
+            // Llama a la función cargarContenido con el parámetro 'inicio'
+            cargarContenido('inicio');
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</body>
+</html>

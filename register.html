@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para los modales */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon">
+                &#9776;
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="cargarContenido('inicio')">Inicio</a>
+                <a href="#" onclick="cargarContenido('servicios')">Servicios</a>
+                <a href="#" onclick="cargarContenido('contacto')">Contacto</a>
+                <a href="#" onclick="cargarContenido('acerca')">Acerca de nosotros</a>
+            </div>
+            <div class="nav-buttons">
+                <button class="login-button" onclick="location.href='login.html'">Iniciar Sesión</button>
+                <button class="register-button" onclick="location.href='register.html'">Registrarse</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="banner" style="width: 30%; height: 0; padding-top: 30%; background-image: url('https://img.freepik.com/vector-premium/registrate-ahora-vector_686319-443.jpg'); background-size: cover; background-position: center; color: white; border-radius: 50%; margin: 0 auto;">
+        </section>        
+        <div class="form-container">
+            <h1 style="text-align: center;">¡No estás registrado!</h1>
+            <h2>Crea una cuenta</h2>
+            <p>Es rápido y fácil.</p>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="first-name" name="first-name" placeholder="Nombre">
+                    <input type="text" id="last-name" name="last-name" placeholder="Apellido">
+                </div>
+                <input type="email" id="email" name="email" placeholder="Número de celular o correo electrónico">
+                <input type="password" id="password" name="password" placeholder="Contraseña nueva">
+                <label for="birthdate">Fecha de nacimiento</label>
+                <input type="date" id="birthdate" name="birthdate">
+                <label for="gender">Sexo</label>
+                <div class="gender-options">
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Mujer</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Hombre</label>
+                    <input type="radio" id="custom" name="gender" value="custom">
+                    <label for="custom">Personalizado</label>
+                </div>
+                <p class="info-text">Es posible que las personas que usan nuestro servicio hayan subido tu información de contacto a SueñoCampeón. <a href="#" onclick="showModal('moreInfoModal')">Obtén más información.</a></p>
+                <p class="terms">Al hacer clic en "Registrarte", aceptas nuestras <a href="#" onclick="showModal('conditionsModal')">Condiciones</a>, la <a href="#" onclick="showModal('privacyPolicyModal')">Política de privacidad</a> y la <a href="#" onclick="showModal('cookiesPolicyModal')">Política de cookies</a>. Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras.</p>
+                <button type="submit">Registrarte</button>
+            </form>
+            <p>¿Ya tienes una cuenta? <a href="login.html">Iniciar sesión</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 BUENASALUD. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modales -->
+    <div id="moreInfoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('moreInfoModal')">&times;</span>
+            <h2>Obtén más información</h2>
+            <p>Descubre cómo SueñoCampeón, líder en tecnología de monitoreo del sueño, está transformando el rendimiento de los atletas de élite. Es posible que las personas que usan nuestro servicio hayan subido tu información de contacto a SueñoCampeón. Nuestra empresa se dedica a proporcionar soluciones innovadoras que aprovechan los datos del sueño para optimizar el rendimiento deportivo. Desde el análisis exhaustivo de los ciclos de sueño hasta la personalización de rutinas de descanso, en SueñoCampeón estamos comprometidos a impulsar el éxito de los atletas a través de un sueño de calidad superior. Obtén más información sobre cómo nuestros servicios están redefiniendo los límites del rendimiento deportivo y llevando a los campeones a nuevas alturas."</p>
+        </div>
+    </div>
+
+    <div id="conditionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('conditionsModal')">&times;</span>
+            <h2>Condiciones</h2>
+            <p>Al hacer clic en 'Registrarte', aceptas nuestras condiciones, que garantizan un uso adecuado y seguro de nuestra plataforma. Nuestras condiciones establecen las pautas y regulaciones para garantizar la integridad de la experiencia de nuestros usuarios. Desde la protección de la privacidad hasta el uso responsable de los recursos proporcionados, nuestras condiciones están diseñadas para promover un entorno colaborativo y respetuoso. Únete a nuestra comunidad comprometida con la excelencia y acepta nuestras condiciones para disfrutar de todos los beneficios que SueñoCampeón tiene para ofrecer.</p>
+        </div>
+    </div>
+
+    <div id="privacyPolicyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('privacyPolicyModal')">&times;</span>
+            <h2>Política de privacidad</h2>
+            <p>Nuestra política de privacidad en SueñoCampeón es un compromiso sólido con la protección de tus datos personales. Nos tomamos muy en serio la privacidad y seguridad de la información que compartes con nosotros. Esta política detalla cómo recopilamos, utilizamos, protegemos y compartimos tu información, así como tus derechos y opciones respecto a tus datos personales. En SueñoCampeón, nos esforzamos por mantener la transparencia y la confianza en todas nuestras interacciones, garantizando que tus datos estén seguros y protegidos en todo momento. Consulta nuestra política de privacidad para obtener más información sobre cómo protegemos tu privacidad y seguridad en línea.</p>
+        </div>
+    </div>
+
+    <div id="cookiesPolicyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cookiesPolicyModal')">&times;</span>
+            <h2>Política de cookies</h2>
+            <p>Nuestra política de cookies en SueñoCampeón es parte integral de nuestra dedicación a brindarte una experiencia en línea personalizada y efectiva. Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas nuestro sitio web. Estos archivos nos permiten recordar tus preferencias y ofrecerte contenido relevante y funcionalidades mejoradas. En nuestra política de cookies, explicamos cómo utilizamos las cookies, qué tipos de cookies utilizamos y cómo puedes administrar tus preferencias de cookies. En SueñoCampeón, estamos comprometidos a garantizar que tu experiencia en línea sea segura, eficiente y adaptada a tus necesidades individuales. Consulta nuestra política de cookies para obtener más información sobre cómo utilizamos las cookies para mejorar tu experiencia en nuestro sitio web.</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script> 
+    <script>
+        function showModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            var modals = document.getElementsByClassName('modal');
+            for (var i = 0; i < modals.length; i++) {
+                var modal = modals[i];
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
