@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Gestión de Productos</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="admin.html">Dashboard</a>
+                <a href="usuarios.html">Usuarios</a>
+                <a href="productos.html">Productos</a>
+                <a href="categorias.html">Categorías</a>
+                <a href="ventas.html">Ventas</a>
+            </div>
+            <div class="user-info">
+                <img src="images/user-placeholder.png" alt="User Icon">
+                <span id="nombreUsuario">Nombre Usuario</span>
+            </div>
+            <div class="menu-icon2" onclick="toggleSettings()">
+                <i class="fas fa-cog"></i>
+                <div class="settings-dropdown" id="settings-dropdown">
+                    <a href="#">Perfil</a>
+                    <a href="#">Configuración</a>
+                    <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        
+        <h1>Gestión de Productos</h1>
+        <button onclick="mostrarFormularioProducto()">Agregar Producto</button>
+        <div id="formulario-producto" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarFormularioProducto()">&times;</span>
+                <h2>Agregar Producto</h2>
+                <form id="form-producto">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" name="precio" required>
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria" name="categoria">
+                        <!-- Opciones dinámicas generadas por JavaScript -->
+                    </select>
+                    <label for="imagen">Imagen:</label>
+                    <input type="file" id="imagen" name="imagen">
+                    <button type="submit">Guardar</button>
+                </form>
+            </div>
+        </div>
+        <table id="tabla-productos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Contenido dinámico generado por JavaScript -->
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 BUENASALUD. Todos los derechos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

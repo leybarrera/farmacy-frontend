@@ -14,152 +14,221 @@ function mostrartipo(medicamento) {
 
     if (medicamento === 'libres') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Resistencia!</h1>
-            <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <p>Descripción de deportes de resistencia. Estos deportes se centran en la resistencia física y la capacidad aeróbica...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
+            <div class="producto">
+                <img src="ruta/a/imagen1.jpg" alt="Producto Libre">
+                <div class="descripcion">
+                    <h2>Producto Libre</h2>
+                    <p>Descripción detallada del producto libre.</p>
+                    <p>Precio: $XX.XX</p>
+                    <button onclick="agregarAlCarrito('Producto Libre')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
+            </div> 
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
         `;
     } else if (medicamento === 'recetados') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Fuerza y Potencia!</h1>
-            <div class="video-container">
-                <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="ruta/a/imagen2.jpg" alt="Producto Recetado">
+                <div class="descripcion">
+                    <h2>Producto Recetado</h2>
+                    <p>Descripción detallada del producto recetado.</p>
+                    <p>Precio: $YY.YY</p>
+                    <button onclick="agregarAlCarrito('Producto Recetado')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripción de deportes de fuerza y potencia. Estos deportes implican el uso de fuerza muscular y explosividad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
         `;
     } else if (medicamento === 'controlados') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="ruta/a/imagen3.jpg" alt="Producto Controlado">
+                <div class="descripcion">
+                    <h2>Producto Controlado</h2>
+                    <p>Descripción detallada del producto controlado.</p>
+                    <p>Precio: $ZZ.ZZ</p>
+                    <button onclick="agregarAlCarrito('Producto Controlado')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
         `;
     } else if (medicamento === 'genericos') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="ruta/a/imagen4.jpg" alt="Producto Genérico">
+                <div class="descripcion">
+                    <h2>Producto Genérico</h2>
+                    <p>Descripción detallada del producto genérico.</p>
+                    <p>Precio: $AA.AA</p>
+                    <button onclick="agregarAlCarrito('Producto Genérico')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
     } else if (medicamento === 'marca') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="ruta/a/imagen5.jpg" alt="Producto de Marca">
+                <div class="descripcion">
+                    <h2>Producto de Marca</h2>
+                    <p>Descripción detallada del producto de marca.</p>
+                    <p>Precio: $BB.BB</p>
+                    <button onclick="agregarAlCarrito('Producto de Marca')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
     } else if (medicamento === 'hospitalarios') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="ruta/a/imagen6.jpg" alt="Producto Hospitalario">
+                <div class="descripcion">
+                    <h2>Producto Hospitalario</h2>
+                    <p>Descripción detallada del producto hospitalario.</p>
+                    <p>Precio: $CC.CC</p>
+                    <button onclick="agregarAlCarrito('Producto Hospitalario')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
     } else if (medicamento === 'suplementos') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="ruta/a/imagen7.jpg" alt="Producto de Suplemento">
+                <div class="descripcion">
+                    <h2>Suplemento</h2>
+                    <p>Descripción detallada del suplemento.</p>
+                    <p>Precio: $DD.DD</p>
+                    <button onclick="agregarAlCarrito('Producto de Suplemento')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
     } else if (medicamento === 'fitoterapia') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="ruta/a/imagen8.jpg" alt="Producto de Fitoterapia">
+                <div class="descripcion">
+                    <h2>Producto de Fitoterapia</h2>
+                    <p>Descripción detallada del producto de fitoterapia.</p>
+                    <p>Precio: $EE.EE</p>
+                    <button onclick="agregarAlCarrito('Producto de Fitoterapia')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
-    } else if (medicamento === 'homeopaticos') {
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
+    }   else if (medicamento === 'homeopaticos') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="https://assets1.farmaciasanpablo.com.mx/landings/_blog/natural/230310-medicamentoHomeopatico/medicamento-homeopatico-que-es.jpg" alt="Medicamentos Homeopáticos">
+                <div class="descripcion">
+                    <h2>Medicamentos Homeopáticos</h2>
+                    <p>Descripción detallada de los medicamentos homeopáticos.</p>
+                    <p>Precio: $FF.FF</p>
+                    <button onclick="agregarAlCarrito('Medicamentos Homeopáticos')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
     } else if (medicamento === 'veterinarios') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="https://t2.uc.ltmcdn.com/es/posts/4/6/4/meloxicam_para_perros_para_que_sirve_y_dosis_50464_orig.jpg" alt="Medicamentos para Uso Veterinario">
+                <div class="descripcion">
+                    <h2>Medicamentos para Uso Veterinario</h2>
+                    <p>Descripción detallada de los medicamentos para uso veterinario.</p>
+                    <p>Precio: $GG.GG</p>
+                    <button onclick="agregarAlCarrito('Medicamentos para Uso Veterinario')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
     } else if (medicamento === 'personal') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="https://img.freepik.com/vector-premium/cuidado-personal-higiene-salud-corporal-articulos-productos-bano_8071-4348.jpg" alt="Productos de Cuidado Personal y Salud">
+                <div class="descripcion">
+                    <h2>Productos de Cuidado Personal y Salud</h2>
+                    <p>Descripción detallada de los productos de cuidado personal y salud.</p>
+                    <p>Precio: $HH.HH</p>
+                    <button onclick="agregarAlCarrito('Productos de Cuidado Personal y Salud')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
     } else if (medicamento === 'urgencia') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="https://i0.wp.com/enfermerodesimulacion.com/wp-content/uploads/2020/07/Copia-de-la-simulaci%C3%B3n-cl%C3%ADnica-no-es-un-juego-3.png?fit=1120%2C630&ssl=1" alt="Medicamentos de Urgencia">
+                <div class="descripcion">
+                    <h2>Medicamentos de Urgencia</h2>
+                    <p>Descripción detallada de los medicamentos de urgencia.</p>
+                    <p>Precio: $II.II</p>
+                    <button onclick="agregarAlCarrito('Medicamentos de Urgencia')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
     } else if (medicamento === 'especial') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="https://www.shutterstock.com/image-vector/3d-realistic-jar-round-pills-260nw-2337616455.jpg" alt="Medicamentos de Venta Especial">
+                <div class="descripcion">
+                    <h2>Medicamentos de Venta Especial</h2>
+                    <p>Descripción detallada de los medicamentos de venta especial.</p>
+                    <p>Precio: $JJ.JJ</p>
+                    <button onclick="agregarAlCarrito('Medicamentos de Venta Especial')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
     } else if (medicamento === 'avanzadas') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="https://assets-global.website-files.com/63fc754c9c85979aadede3f3/649ade81c47ab4fa25e45d00_gmps%20terapia%20avanzada%20690.jpg" alt="Medicamentos de Terapia Avanzada">
+                <div class="descripcion">
+                    <h2>Medicamentos de Terapia Avanzada</h2>
+                    <p>Descripción detallada de los medicamentos de terapia avanzada.</p>
+                    <p>Precio: $KK.KK</p>
+                    <button onclick="agregarAlCarrito('Medicamentos de Terapia Avanzada')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
     } else if (medicamento === 'diagnostico') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="https://lrdiagnostico.com/wp-content/uploads/2024/04/INICIO-LINEAS-DE-PRODUCTO.jpg" alt="Productos de Diagnóstico">
+                <div class="descripcion">
+                    <h2>Productos de Diagnóstico</h2>
+                    <p>Descripción detallada de los productos de diagnóstico.</p>
+                    <p>Precio: $MM.MM</p>
+                    <button onclick="agregarAlCarrito('Productos de Diagnóstico')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
     } else if (medicamento === 'magistrales') {
         contenido = `
-            <h1 style="text-align: center;">¡Bienvenido a Deportes de Agilidad y Habilidad Motriz!</h1>
-                <div class="video-container">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Bby8wFsVSg0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="producto">
+                <img src="https://biohealthy.com.co/wp-content/uploads/2022/03/formulas-magistrales-biohhealthy.jpeg" alt="Preparaciones Magistrales">
+                <div class="descripcion">
+                    <h2>Preparaciones Magistrales</h2>
+                    <p>Descripción detallada de las preparaciones magistrales.</p>
+                    <p>Precio: $NN.NN</p>
+                    <button onclick="agregarAlCarrito('Preparaciones Magistrales')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                </div>
             </div>
-            <p>Descripcion de deportes de agilidad y habilidad motriz. Estos deportes se centran en la coordinación, la agilidad...</p>
-            <button onclick="cargarContenido('inicio')">Volver atrás</button>
-         `;
+            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+        `;
+    } 
+    else {
+        // Si no se reconoce el tipo de medicamento, se muestra un mensaje de error o manejo adecuado
+        contenido = `<p>No se encontraron productos para la categoría seleccionada.</p>`;
     }
 
     main.innerHTML = contenido;
 }
+
 
 function enviarCorreo(e) {
     e.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
@@ -199,43 +268,72 @@ function mostrarServicio(servicio) {
     var contenido = '';
 
     switch (servicio) {
-        case 'analisis':
+        case 'venta':
             contenido = `
                 <div class="service-container">
-                    <h1>Análisis del Sueño</h1>
-                    <img src="https://imagenes.elpais.com/resizer/v2/PEVFGMGXRVFI5A4HVB3YLTK7VE.gif?auth=eea540eaf621f79ff9c371b23054c4c5290d6a7f26703384312080445ec0c95e&width=1200" alt="Análisis del Sueño" style="max-width: 100%;">
-                    <p>Realizamos un análisis detallado del sueño del atleta utilizando tecnología avanzada de monitoreo, lo que nos permite evaluar la calidad del sueño, la duración, los ciclos de sueño REM y no REM, y detectar posibles trastornos del sueño.</p>
-                    <button onclick="cargarContenido('servicios')">Volver atrás</button>
+                    <h1>BUENASALUD: Tu Farmacia Online de Confianza</h1>
+                    <img src="https://blogs.portafolio.co/desde-la-red/wp-content/uploads/sites/75/2019/11/Requisitos-legales-para-vender-medicamentos-en-una-farmacia-online.jpg" alt="Farmacia Online" style="max-width: 100%;">
+                    <p>En BUENASALUD, nos apasiona cuidar de ti y de tu familia. Somos más que una farmacia en línea; somos tu aliado en salud. Nuestra misión es hacer que el acceso a medicamentos y productos de bienestar sea seguro, conveniente y asequible, todo desde la comodidad de tu hogar.</p>
+                    <ul>
+                        <li><strong>🌟 Variedad y Calidad Garantizada:</strong> Ofrecemos una amplia gama de medicamentos, productos de salud y cuidado personal de marcas reconocidas, asegurando que encuentres exactamente lo que necesitas para tu bienestar.</li>
+                        <li><strong>🚀 Comodidad y Rapidez:</strong> Navega fácilmente por nuestro sitio web intuitivo, realiza tu pedido en unos pocos clics y recibe tus productos en la puerta de tu casa en tiempo récord.</li>
+                        <li><strong>💬 Asesoramiento Profesional:</strong> Nuestro equipo de farmacéuticos y especialistas en salud está siempre disponible para brindarte el mejor consejo y responder a tus preguntas.</li>
+                        <li><strong>🔒 Seguridad y Confidencialidad:</strong> Priorizamos tu seguridad y privacidad. Todos los procesos de compra y pago están protegidos con tecnología de vanguardia.</li>
+                        <li><strong>🎁 Promociones Exclusivas:</strong> Disfruta de descuentos especiales y promociones en tus productos favoritos. Además, ofrecemos programas de fidelidad y suscripción.</li>
+                        <li><strong>🌱 Compromiso con la Comunidad:</strong> Nos esforzamos por promover una vida saludable y sostenible. A través de programas de educación en salud y alianzas con organizaciones locales, apoyamos el bienestar de nuestra comunidad.</li>
+                    </ul>
+                    <button onclick="cargarContenido('servicios')" style="display: inline-block; padding: 10px 20px; margin-top: 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
                 </div>
             `;
             break;
-        case 'asesoramiento':
+        case 'consulta':
             contenido = `
                 <div class="service-container">
-                    <h1>Asesoramiento Personalizado</h1>
-                    <img src="https://www.yomeentreno.com/wp-content/uploads/2020/03/Kick-Donkey.gif" alt="Análisis del Sueño" style="max-width: 100%;">
-                    <p>Ofrecemos consultas con expertos en sueño y rendimiento deportivo para desarrollar planes personalizados de mejora del sueño, que incluyen estrategias para optimizar el tiempo de descanso, la higiene del sueño y la creación de un ambiente propicio para dormir.</p>
-                    <button onclick="cargarContenido('servicios')">Volver atrás</button>
+                    <h1>Consulta Farmacéutica en Línea</h1>
+                    <img src="https://static.vecteezy.com/system/resources/previews/008/157/669/non_2x/online-pharmacy-concept-pharmacist-gives-pill-customer-buys-medication-in-smartphone-screen-online-doctor-consultation-remote-drugstore-illustration-healthcare-banner-for-app-web-vector.jpg" alt="Consulta Farmacéutica en Línea" style="max-width: 100%;">
+                    <p>En BUENASALUD, ofrecemos un servicio de <strong>Consulta Farmacéutica en Línea</strong> diseñado para brindarte asesoramiento personalizado y profesional sobre tus necesidades de salud. Ya sea que tengas preguntas sobre medicamentos, necesitas orientación sobre tratamientos, o requieres consejos para el cuidado de tu salud, nuestros expertos farmacéuticos están a un clic de distancia.</p>
+                    <ul>
+                        <li><strong>👨‍⚕️ Asesoramiento Profesional:</strong> Habla directamente con nuestros farmacéuticos licenciados que te proporcionarán información precisa y recomendaciones basadas en tu historial médico y situación actual.</li>
+                        <li><strong>💊 Gestión de Medicamentos:</strong> Obtén orientación sobre el uso correcto de tus medicamentos, dosificaciones, interacciones, y efectos secundarios para asegurar que tu tratamiento sea seguro y efectivo.</li>
+                        <li><strong>🩺 Soluciones Personalizadas:</strong> Recibe planes de salud personalizados que pueden incluir recomendaciones sobre suplementos, ajustes en el estilo de vida y otras estrategias para mejorar tu bienestar.</li>
+                        <li><strong>📅 Acceso Conveniente:</strong> Agenda tu consulta en línea en el momento que más te convenga, sin necesidad de salir de casa. Nos adaptamos a tu horario.</li>
+                        <li><strong>🔒 Confidencialidad Garantizada:</strong> Todos los detalles de tu consulta son tratados con la más estricta confidencialidad y privacidad, utilizando sistemas seguros para proteger tu información.</li>
+                    </ul>
+                    <button onclick="cargarContenido('servicios')" style="display: inline-block; padding: 10px 20px; margin-top: 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
                 </div>
             `;
             break;
-        case 'entrenamiento':
+        case 'reserva':
             contenido = `
                 <div class="service-container">
-                    <h1>Entrenamiento en Ritmos Circadianos</h1>
-                    <img src="https://www.infobae.com/new-resizer/NCriM4U3fd3BFKyLmH34S4qMxNo=/filters:format(webp):quality(85)/arc-anglerfish-arc2-prod-infobae.s3.amazonaws.com/public/2LFI3D6ENJFQHJM6F6FYDYK5TI" alt="Análisis del Sueño" style="max-width: 100%;">
-                    <p>Brindamos programas de entrenamiento para ajustar los ritmos circadianos del atleta, especialmente para aquellos que viajan frecuentemente o compiten en diferentes zonas horarias, utilizando técnicas de cronobiología para maximizar la adaptación y minimizar el impacto del desfase horario.</p>
-                    <button onclick="cargarContenido('servicios')">Volver atrás</button>
+                    <h1>Reserva y Recarga de Medicamentos</h1>
+                    <img src="https://static.vecteezy.com/system/resources/previews/005/961/619/non_2x/online-pharmacy-word-concepts-banner-medication-medicine-eshopping-online-consultant-presentation-website-isolated-lettering-typography-idea-with-linear-icons-outline-illustration-vector.jpg" alt="Reserva y Recarga de Medicamentos" style="max-width: 100%;">
+                    <p>Con el servicio de <strong>Reserva y Recarga de Medicamentos</strong> de BUENASALUD, nunca más tendrás que preocuparte por quedarte sin tus medicamentos esenciales. Simplificamos la gestión de tus tratamientos médicos, permitiéndote reservar tus medicamentos con antelación y programar recargas automáticas para garantizar que siempre tengas lo que necesitas a mano.</p>
+                    <ul>
+                        <li><strong>🗓️ Reserva Fácil:</strong> Planifica y reserva tus medicamentos con anticipación, evitando la preocupación de olvidarte de tus reposiciones.</li>
+                        <li><strong>🔄 Recarga Automática:</strong> Establece recargas automáticas para tus medicamentos habituales, asegurando un suministro constante sin interrupciones.</li>
+                        <li><strong>💼 Gestión de Prescripciones:</strong> Nuestro sistema te ayuda a gestionar tus recetas médicas y mantener un historial de tus medicamentos, facilitando su renovación.</li>
+                        <li><strong>📦 Entrega a Domicilio:</strong> Disfruta de la comodidad de recibir tus medicamentos directamente en tu puerta, con opciones de entrega rápida y segura.</li>
+                        <li><strong>🔔 Recordatorios y Notificaciones:</strong> Recibe recordatorios oportunos para tus recargas y notificaciones cuando tus pedidos estén listos para ser enviados.</li>
+                    </ul>
+                    <button onclick="cargarContenido('servicios')" style="display: inline-block; padding: 10px 20px; margin-top: 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
                 </div>
             `;
             break;
-        case 'seguimiento':
+        case 'informacion':
             contenido = `
                 <div class="service-container">
-                    <h1>Seguimiento y Feedback Continuo</h1>
-                    <img src="https://img.huffingtonpost.es/uploads/2023/01/12/63bf48aebd5ce.gif" alt="Análisis del Sueño" style="max-width: 100%;">
-                    <p>Establecemos un sistema de seguimiento continuo del progreso del atleta en relación con su sueño y su rendimiento deportivo, proporcionando retroalimentación regular y ajustando los planes de sueño según sea necesario para garantizar una mejora constante en el descanso y el rendimiento.</p>
-                    <button onclick="cargarContenido('servicios')">Volver atrás</button>
+                    <h1>Información sobre Salud y Bienestar</h1>
+                    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528" alt="Información sobre Salud y Bienestar" style="max-width: 100%;">
+                    <p>En BUENASALUD, estamos comprometidos con tu bienestar integral. Nuestro servicio de <strong>Información sobre Salud y Bienestar</strong> te ofrece acceso a recursos confiables y actualizados para que puedas tomar decisiones informadas sobre tu salud. Desde artículos y guías hasta consejos de expertos, te proporcionamos el conocimiento que necesitas para llevar un estilo de vida saludable.</p>
+                    <ul>
+                        <li><strong>📚 Artículos y Guías:</strong> Explora una amplia gama de artículos sobre salud, nutrición, ejercicio y bienestar emocional, escritos por profesionales y especialistas en cada área.</li>
+                        <li><strong>🩺 Consejos de Expertos:</strong> Recibe recomendaciones y consejos prácticos directamente de nuestros farmacéuticos y expertos en salud, basados en las últimas investigaciones y tendencias.</li>
+                        <li><strong>📊 Actualizaciones Médicas:</strong> Mantente al día con las noticias más recientes en el ámbito de la salud, incluidas nuevas terapias, avances en medicamentos, y cambios en las recomendaciones de salud pública.</li>
+                        <li><strong>🔍 Recursos Educativos:</strong> Accede a guías detalladas y recursos educativos que te ayudan a comprender mejor diversas condiciones de salud y cómo manejarlas eficazmente.</li>
+                        <li><strong>💬 Comunidad y Soporte:</strong> Participa en foros y grupos de apoyo donde puedes compartir experiencias, hacer preguntas y obtener apoyo de otros usuarios y profesionales de la salud.</li>
+                    </ul>
+                    <button onclick="cargarContenido('servicios')" style="display: inline-block; padding: 10px 20px; margin-top: 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
                 </div>
             `;
             break;
@@ -246,7 +344,7 @@ function mostrarServicio(servicio) {
                         <img style="border-radius: 50%; width: 15%; display: block; margin: 0 auto;" src="https://scontent.fuio10-1.fna.fbcdn.net/v/t39.30808-6/426379216_3293036634330033_3850189104314073076_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=BWSMyAMFRpcQ7kNvgERheKd&_nc_ht=scontent.fuio10-1.fna&oh=00_AYCpaRbj29EAYwXdF4n6jyOu-mNJ1FJqAGLeE2DHK9mrxg&oe=666BE379" alt="Edison Barrera">
                         <h1 style="text-align: center;">Edison Barrera</h1>
                         <p>Es un desarrollador con amplia experiencia en la creación de aplicaciones innovadoras. Ha trabajado en varios proyectos de alto impacto y se especializa en el desarrollo de soluciones tecnológicas avanzadas para mejorar el rendimiento deportivo.</p>
-                        <button onclick="cargarContenido('acerca')">Volver atrás</button>
+                        <button onclick="cargarContenido('acerca')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Volver atrás</button>
                     </div>
                 `;
             break;
@@ -256,7 +354,7 @@ function mostrarServicio(servicio) {
                         <img style="border-radius: 50%; width: 15%; display: block; margin: 0 auto;" src="https://scontent.fuio10-1.fna.fbcdn.net/v/t39.30808-6/438086481_7644911172288605_892951878702695438_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=C4l9MwMngjkQ7kNvgFsEk6D&_nc_ht=scontent.fuio10-1.fna&oh=00_AYB0bqazxCNIpzscsFYujqgIDejzgOZbZU3kAa2UG_VWFQ&oe=666BF4AA" alt="Jennifer Faz">
                         <h1 style="text-align: center;">Jennifer Faz</h1>
                         <p>Se especializa en el desarrollo frontend y tiene un gran interés en la experiencia del usuario. Su habilidad para crear interfaces intuitivas y atractivas ha sido clave en la implementación de soluciones innovadoras para nuestros clientes.</p>
-                        <button onclick="cargarContenido('acerca')">Volver atrás</button>
+                        <button onclick="cargarContenido('acerca')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Volver atrás</button>
                     </div>
                 `;
             break;
@@ -266,17 +364,17 @@ function mostrarServicio(servicio) {
                         <img style="border-radius: 50%; width: 15%; display: block; margin: 0 auto;" src="https://scontent.fuio10-1.fna.fbcdn.net/v/t39.30808-6/293992534_3108970632709617_1173418998859448657_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=0xgZpeF-j8YQ7kNvgG8_8qS&_nc_ht=scontent.fuio10-1.fna&oh=00_AYDNUz6Z2pckxPPqDPMDtR3mLizMkrUSzoG_7bNtrjycyw&oe=666BFC96" alt="Steven Velez">
                         <h1 style="text-align: center;">Steven Velez</h1>
                         <p>Es un desarrollador con amplia experiencia en la creación de aplicaciones innovadoras. Ha trabajado en varios proyectos de alto impacto y se especializa en el desarrollo de soluciones tecnológicas avanzadas para mejorar el rendimiento deportivo.</p>
-                        <button onclick="cargarContenido('acerca')">Volver atrás</button>
+                        <button onclick="cargarContenido('acerca')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Volver atrás</button>
                     </div>
                 `;
             break;
             case 'Alexi':
                 contenido = `
                     <div class="service-container">
-                        <img style="border-radius: 50%; width: 15%; display: block; margin: 0 auto;" src=" " alt="Alexi Jimenez">
+                        <img style="border-radius: 50%; width: 15%; display: block; margin: 0 auto;" src="https://scontent.fuio10-1.fna.fbcdn.net/v/t39.30808-6/448090660_439526802235644_4585318733155341554_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Vm82C-B33NIQ7kNvgGD-yEg&_nc_ht=scontent.fuio10-1.fna&oh=00_AYD5S9sJ_VXMtIhcfErzc08lzxZXOCMvJNRqZu-f2_9k0A&oe=666E7801" alt="Alexi Jimenez">
                         <h1 style="text-align: center;">Alexi Jimenez</h1>
                         <p>Es un desarrollador con amplia experiencia en la creación de aplicaciones innovadoras. Ha trabajado en varios proyectos de alto impacto y se especializa en el desarrollo de soluciones tecnológicas avanzadas para mejorar el rendimiento deportivo.</p>
-                        <button onclick="cargarContenido('acerca')">Volver atrás</button>
+                        <button onclick="cargarContenido('acerca')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Volver atrás</button>
                     </div>
                 `;
             break;
@@ -293,10 +391,6 @@ function volverInicio() {
     switchContent('inicio');
 }
 
-//
-
-
-//
 // Función para cargar el contenido dinámico en el <main>
 function cargarContenido(accion) {
     // Obtener el elemento <main>
@@ -515,25 +609,25 @@ function cargarContenido(accion) {
                         <img src="https://gacetadental.com/wp-content/uploads/2022/07/Medicamentos-internet.jpg" alt="Servicio 1">
                         <h3>Venta en Línea de Medicamentos y Productos de Salud</h3>
                         <p>BUENASALUD ofrece a los clientes comprar medicamentos, productos de cuidado personal, suplementos y otros artículos de salud desde la comodidad de sus hogares.</p>
-                        <button onclick="mostrarServicio('analisis')">Ver más</button>
+                        <button onclick="mostrarServicio('venta')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Ver más</button>
                     </div>
                     <div class="service-item">
                         <img src="https://img.freepik.com/vector-premium/consulta-linea-o-concepto-retroalimentacion-laptop-foto-farmaceutica-medicamentos-mano_531064-7414.jpg" alt="Servicio 2">
                         <h3>Consulta Farmacéutica en Línea</h3>
                         <p>BUENASALUD ofrece servicios de consulta y asesoramiento farmacéutico a través de correo electrónico o videoconferencia con farmacéuticos calificados.</p>
-                        <button onclick="mostrarServicio('asesoramiento')">Ver más</button>
+                        <button onclick="mostrarServicio('consulta')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Ver más</button>
                     </div>
                     <div class="service-item">
                         <img src="https://tecnosoluciones.com/wp-content/uploads/2023/03/sistemas-de-software-para-centros-de-salud-o-clinicas.png" alt="Servicio 3">
                         <h3>Reserva y Recarga de Medicamentos</h3>
                         <p>BUENASALUD ofrece a los clientes puedan reservar o recargar sus medicamentos recetados a través de la página web de la farmacia. Pueden proporcionar detalles de la receta y programar la recogida en la sucursal más conveniente.</p>
-                        <button onclick="mostrarServicio('entrenamiento')">Ver más</button>
+                        <button onclick="mostrarServicio('reserva')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Ver más</button>
                     </div>
                     <div class="service-item">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVCVuN8lVT_df_5kZ58hbaD3YrtOSXTc-UcK_sKWh33t7WncakESf7rnvyWSiMa_iasLY&usqp=CAU" alt="Servicio 4">
                         <h3>Información sobre Salud y Bienestar</h3>
                         <p>BUENASALUD ofrece recursos y artículos informativos sobre una variedad de temas de salud y bienestar, incluyendo enfermedades comunes, consejos de prevención, estilos de vida saludables y más.</p>
-                        <button onclick="mostrarServicio('seguimiento')">Ver más</button>
+                        <button onclick="mostrarServicio('informacion')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Ver más</button>
                     </div>
                 </div>
             </section>
@@ -658,9 +752,9 @@ function cargarContenido(accion) {
                 background-color: #f9f9f9;
                 border: 1px solid #ddd;
                 border-radius: 10px;
-                padding: 20px;
-                flex: 1 1 300px;
-                max-width: 300px;
+                padding: 10px;
+                flex: 1 1 60px;
+                max-width: 170px;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                 transition: transform 0.3s ease;
                 text-align: center;
@@ -669,7 +763,7 @@ function cargarContenido(accion) {
                 transform: translateY(-10px);
             }
             .team-member img {
-                max-width: 100%;
+                max-width: 50%;
                 border-radius: 10px;
                 margin-bottom: 15px;
             }
@@ -762,7 +856,7 @@ function cargarContenido(accion) {
                         <button onclick="mostrarServicio('Steven')">Ver más</button>
                     </div>
                     <div class="team-member" onclick="showDeveloperDetails('Alexi Jimenez', 'DESARROLLADOR', 'Steven Velez es un desarrollador con amplia experiencia en la creación de aplicaciones innovadoras. Ha trabajado en varios proyectos de alto impacto y se especializa en el desarrollo de soluciones tecnológicas avanzadas para mejorar el rendimiento deportivo.', 'https://scontent.fuio10-1.fna.fbcdn.net/v/t39.30808-6/426379216_3293036634330033_3850189104314073076_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=3pdIJ_T0EAoQ7kNvgGXBfXk&_nc_ht=scontent.fuio10-1.fna&oh=00_AYArHEXgB6CiNNg7g1SehMBSt5irm6WLQJBHKDM5zbSw3Q&oe=666005F9')">
-                        <img src="https://instagram.fuio10-1.fna.fbcdn.net/v/t51.2885-19/434940037_298363286612379_6155782638737710711_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fuio10-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=W_qPHSE_VOgQ7kNvgHdrP1q&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYAYG5ObnmUmqd-aYoIGnsBOJeGw2TKyQLzFWRxxGhrYuw&oe=666BD655&_nc_sid=8b3546" alt="Alexi Jimenez">
+                        <img src="https://scontent.fuio10-1.fna.fbcdn.net/v/t39.30808-6/448090660_439526802235644_4585318733155341554_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Vm82C-B33NIQ7kNvgGD-yEg&_nc_ht=scontent.fuio10-1.fna&oh=00_AYD5S9sJ_VXMtIhcfErzc08lzxZXOCMvJNRqZu-f2_9k0A&oe=666E7801" alt="Alexi Jimenez">
                         <h3>Alexi Jimenez</h3>
                         <p>DESARROLLADOR</p>
                         <button onclick="mostrarServicio('Alexi')">Ver más</button>
