@@ -1,43 +1,43 @@
-const formregister = document.getElementById('form-register')
+const formregister = document.getElementById("form-register");
 
 const data = {
-  nombre: '',
-  apellido: '',
-  email: '',
-  contraseña: '',
-  cedula: '',
-  fecha_nacimiento: '',
-  sexo: '',
-}
+  nombre: "",
+  apellido: "",
+  email: "",
+  contraseña: "",
+  cedula: "",
+  fecha_nacimiento: "",
+  sexo: "",
+};
 
-formregister.addEventListener('submit', (e) => {
-  e.preventDefault()
+formregister.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  if (!Object.values(data).some((current) => current == '')) {
+  if (!Object.values(data).some((current) => current == "")) {
     axios
-      .post('https://server-farmacy.onrender.com/usuarios', data)
+      .post("http://localhost:3000/usuarios", data)
       .then((res) => {
         Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Usuario registrado éxito',
+          position: "top-end",
+          icon: "success",
+          title: "Usuario registrado éxito",
           showConfirmButton: false,
           timer: 1500,
-        })
+        });
 
-        formregister.reset()
+        formregister.reset();
       })
-      .catch(console.log)
+      .catch(console.log);
   }
-})
+});
 
-formregister.addEventListener('change', (e) => {
-  const { name, value } = e.target
+formregister.addEventListener("change", (e) => {
+  const { name, value } = e.target;
   if (value && value.length > 0) {
-    data[name] = value
+    data[name] = value;
   } else {
-    data[name] = ''
+    data[name] = "";
   }
 
-  console.log(data)
-})
+  console.log(data);
+});

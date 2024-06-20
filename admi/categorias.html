@@ -1,69 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <title>Gestión de Categorías</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="menu-icon" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </div>
-            <div class="nav-links" id="nav-links">
-                <a href="admin.html">Dashboard</a>
-                <a href="usuarios.html">Usuarios</a>
-                <a href="productos.html">Productos</a>
-                <a href="categorias.html">Categorías</a>
-                <a href="ventas.html">Ventas</a>
-            </div>
-            <div class="user-info">
-                <img src="images/user-placeholder.png" alt="User Icon">
-                <span id="nombreUsuario">Nombre Usuario</span>
-            </div>
-            <div class="menu-icon2" onclick="toggleSettings()">
-                <i class="fas fa-cog"></i>
-                <div class="settings-dropdown" id="settings-dropdown">
-                    <a href="#">Perfil</a>
-                    <a href="#">Configuración</a>
-                    <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
-                </div>
-            </div>
-        </nav>
+      <nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="nav-links">
+          <a href="admin.html">Dashboard</a>
+          <a href="usuarios.html">Usuarios</a>
+          <a href="productos.html">Productos</a>
+          <a href="categorias.html">Categorías</a>
+          <a href="ventas.html">Ventas</a>
+        </div>
+        <div class="user-info">
+          <img src="images/user-placeholder.png" alt="User Icon" />
+          <span id="nombreUsuario">Nombre Usuario</span>
+        </div>
+        <div class="menu-icon2" onclick="toggleSettings()">
+          <i class="fas fa-cog"></i>
+          <div class="settings-dropdown" id="settings-dropdown">
+            <a href="#">Perfil</a>
+            <a href="#">Configuración</a>
+            <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+          </div>
+        </div>
+      </nav>
     </header>
     <main>
-        <h1>Gestión de Categorías</h1>
-        <button onclick="mostrarFormularioCategoria()">Agregar Categoría</button>
-        <div id="formulario-categoria" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="cerrarFormularioCategoria()">&times;</span>
-                <h2>Agregar Categoría</h2>
-                <form id="form-categoria">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                    <button type="submit">Guardar</button>
-                </form>
-            </div>
+      <h1>Gestión de Categorías</h1>
+      <button onclick="mostrarFormularioCategoria()">Agregar Categoría</button>
+      <div id="formulario-categoria" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="cerrarFormularioCategoria()"
+            >&times;</span
+          >
+          <h2>Agregar Categoría</h2>
+          <form id="form-categoria">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required />
+            <button type="submit">Guardar</button>
+          </form>
         </div>
-        <table id="tabla-categorias">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Contenido dinámico generado por JavaScript -->
-            </tbody>
-        </table>
+      </div>
+      <table id="tabla-categorias">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <!-- Contenido dinámico generado por JavaScript -->
+        </tbody>
+      </table>
     </main>
     <footer>
-        <p>&copy; 2024 BUENASALUD. Todos los derechos reservados.</p>
+      <p>&copy; 2024 BUENASALUD. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="scripts.js"></script>
-</body>
+    <script src="categorias.js"></script>
+  </body>
 </html>

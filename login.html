@@ -202,62 +202,64 @@
     <script>
       function redirigirAlIndex() {
         // Obtener los valores ingresados en el formulario
-        var email = document.getElementById('email').value
-        var contraseña = document.getElementById('password').value
+        var email = document.getElementById("email").value;
+        var contraseña = document.getElementById("password").value;
 
         axios
-          .post('https://server-farmacy.onrender.com/usuarios/login', {
+          .post("http://localhost:3000/usuarios/login", {
             email,
             contraseña,
           })
           .then((res) => {
-            const usuario = res.data.usuario
-            localStorage.setItem('usuario', JSON.stringify(usuario))
+            const usuario = res.data.usuario;
+            localStorage.setItem("usuario", JSON.stringify(usuario));
 
             Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Inicio de sesión exitoso',
+              position: "top-end",
+              icon: "success",
+              title: "Inicio de sesión exitoso",
               showConfirmButton: false,
               timer: 2500,
-            })
+            });
             setTimeout(() => {
-              window.location.href = 'index_logueado.html'
-            }, 2500)
+              window.location.href = "index_logueado.html";
+            }, 2500);
           })
           .catch((err) => {
             Swal.fire({
-              position: 'top-end',
-              icon: 'error',
+              position: "top-end",
+              icon: "error",
               title: err.response.data.message,
               showConfirmButton: false,
               timer: 1500,
-            })
-          })
+            });
+          });
       }
 
       // Obtener elementos del DOM
-      const forgotPasswordLink = document.getElementById('forgotPasswordLink')
-      const forgotPasswordModal = document.getElementById('forgotPasswordModal')
-      const closeModal = document.getElementById('closeModal')
+      const forgotPasswordLink = document.getElementById("forgotPasswordLink");
+      const forgotPasswordModal = document.getElementById(
+        "forgotPasswordModal"
+      );
+      const closeModal = document.getElementById("closeModal");
 
       // Mostrar el modal cuando se hace clic en el enlace
       forgotPasswordLink.onclick = function (event) {
-        event.preventDefault()
-        forgotPasswordModal.style.display = 'block'
-      }
+        event.preventDefault();
+        forgotPasswordModal.style.display = "block";
+      };
 
       // Ocultar el modal cuando se hace clic en el botón de cerrar
       closeModal.onclick = function () {
-        forgotPasswordModal.style.display = 'none'
-      }
+        forgotPasswordModal.style.display = "none";
+      };
 
       // Ocultar el modal cuando se hace clic fuera del modal
       window.onclick = function (event) {
         if (event.target == forgotPasswordModal) {
-          forgotPasswordModal.style.display = 'none'
+          forgotPasswordModal.style.display = "none";
         }
-      }
+      };
     </script>
     <script src="scripts.js"></script>
     <!-- Asegúrate de que este archivo existe y tiene el contenido del script -->
