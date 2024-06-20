@@ -70,22 +70,26 @@
             <h1 style="text-align: center;">¡No estás registrado!</h1>
             <h2>Crea una cuenta</h2>
             <p>Es rápido y fácil.</p>
-            <form>
+            <form id="form-register">
                 <div class="form-group">
-                    <input type="text" id="first-name" name="first-name" placeholder="Nombre">
-                    <input type="text" id="last-name" name="last-name" placeholder="Apellido">
+                    
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                    <input type="text" id="apellido" name="apellido" placeholder="Apellido">
                 </div>
                 <input type="email" id="email" name="email" placeholder="Número de celular o correo electrónico">
-                <input type="password" id="password" name="password" placeholder="Contraseña nueva">
-                <label for="birthdate">Fecha de nacimiento</label>
-                <input type="date" id="birthdate" name="birthdate">
-                <label for="gender">Sexo</label>
+                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña nueva">
+                
+                <label for="cedula">Su Numero de cedula</label>
+                <input type="text" id="cedula" name="cedula" placeholder="Cédula" required>
+                <label for="fecha_nacimiento">Fecha de nacimiento</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+                <label for="Sexo">Sexo</label>
                 <div class="gender-options">
-                    <input type="radio" id="female" name="gender" value="female">
+                    <input type="radio" id="female" name="sexo" value="female">
                     <label for="female">Mujer</label>
-                    <input type="radio" id="male" name="gender" value="male">
+                    <input type="radio" id="male" name="sexo" value="male">
                     <label for="male">Hombre</label>
-                    <input type="radio" id="custom" name="gender" value="custom">
+                    <input type="radio" id="custom" name="sexo" value="custom">
                     <label for="custom">Personalizado</label>
                 </div>
                 <p class="info-text">Es posible que las personas que usan nuestro servicio hayan subido tu información de contacto a SueñoCampeón. <a href="#" onclick="showModal('moreInfoModal')">Obtén más información.</a></p>
@@ -131,8 +135,10 @@
             <p>Nuestra política de cookies en SueñoCampeón es parte integral de nuestra dedicación a brindarte una experiencia en línea personalizada y efectiva. Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas nuestro sitio web. Estos archivos nos permiten recordar tus preferencias y ofrecerte contenido relevante y funcionalidades mejoradas. En nuestra política de cookies, explicamos cómo utilizamos las cookies, qué tipos de cookies utilizamos y cómo puedes administrar tus preferencias de cookies. En SueñoCampeón, estamos comprometidos a garantizar que tu experiencia en línea sea segura, eficiente y adaptada a tus necesidades individuales. Consulta nuestra política de cookies para obtener más información sobre cómo utilizamos las cookies para mejorar tu experiencia en nuestro sitio web.</p>
         </div>
     </div>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts.js"></script> 
+    <script src="register.js"></script>
     <script>
         function showModal(modalId) {
             var modal = document.getElementById(modalId);
@@ -153,5 +159,6 @@
             }
         }
     </script>
+
 </body>
 </html>
