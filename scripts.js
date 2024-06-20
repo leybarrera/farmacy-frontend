@@ -1,32 +1,48 @@
+const productos = [
+  {
+    id: crypto.randomUUID(),
+    imagen:
+      'https://images.ecestaticos.com/2OFO72FGrUW2USgjzNyAXE-13_I=/0x143:3974x2379/1338x752/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F742%2F69a%2Fccf%2F74269accf14f3a89df5f365ad6d3f16c.jpg',
+
+    nombre: 'Paracetamol',
+    descripcion:
+      'El paracetamol es un medicamento ampliamente utilizado para aliviar el dolor y reducir la fiebre. Se utiliza comúnmente para tratar dolores de cabeza, dolor muscular, artritis, dolor de espalda, dolores de muelas, resfriados y fiebres. Es conocido por su eficacia y perfil de seguridad cuando se usa según las indicaciones.',
+
+    precio: 10.0,
+  },
+]
+
 /*-----------MOSTRA Y OCULTAR MENU-----*/
 document.addEventListener('DOMContentLoaded', () => {
-    const menuIcon = document.querySelector('.menu-icon');
-    const navLinks = document.querySelector('.nav-links');
-    
-    menuIcon.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-});
+  const menuIcon = document.querySelector('.menu-icon')
+  const navLinks = document.querySelector('.nav-links')
+
+  menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('active')
+  })
+})
+
 /*---------------FIN MENU------------ */
 function mostrartipo(medicamento) {
-    var main = document.querySelector('main');
-    var contenido = '';
-
-    if (medicamento === 'libres') {
-        contenido = `
-            <div class="producto">
-                <img src="ruta/a/imagen1.jpg" alt="Producto Libre">
-                <div class="descripcion">
-                    <h2>Producto Libre</h2>
-                    <p>Descripción detallada del producto libre.</p>
-                    <p>Precio: $XX.XX</p>
-                    <button onclick="agregarAlCarrito('Producto Libre')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
-                </div>
-            </div> 
-            <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'recetados') {
-        contenido = `
+  var main = document.querySelector('main')
+  var contenido = ''
+  if (medicamento === 'libres') {
+    for (let producto of productos) {
+      contenido += `
+                <div class="producto">
+                    <img src="${producto.imagen}" alt="Producto Libre">
+                    <div class="descripcion">
+                        <h2>${producto.nombre}</h2>
+                        <p>${producto.descripcion}</p>
+                        <p>Precio: $${producto.precio.toFixed(2)}</p>
+                        <button onclick="agregarAlCarrito('Producto Libre')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Agregar a Carrito</button>
+                    </div>
+                </div> 
+                <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
+            `
+    }
+  } else if (medicamento === 'recetados') {
+    contenido = `
             <div class="producto">
                 <img src="ruta/a/imagen2.jpg" alt="Producto Recetado">
                 <div class="descripcion">
@@ -37,9 +53,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'controlados') {
-        contenido = `
+        `
+  } else if (medicamento === 'controlados') {
+    contenido = `
             <div class="producto">
                 <img src="ruta/a/imagen3.jpg" alt="Producto Controlado">
                 <div class="descripcion">
@@ -50,9 +66,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'genericos') {
-        contenido = `
+        `
+  } else if (medicamento === 'genericos') {
+    contenido = `
             <div class="producto">
                 <img src="ruta/a/imagen4.jpg" alt="Producto Genérico">
                 <div class="descripcion">
@@ -63,9 +79,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'marca') {
-        contenido = `
+        `
+  } else if (medicamento === 'marca') {
+    contenido = `
             <div class="producto">
                 <img src="ruta/a/imagen5.jpg" alt="Producto de Marca">
                 <div class="descripcion">
@@ -76,9 +92,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'hospitalarios') {
-        contenido = `
+        `
+  } else if (medicamento === 'hospitalarios') {
+    contenido = `
             <div class="producto">
                 <img src="ruta/a/imagen6.jpg" alt="Producto Hospitalario">
                 <div class="descripcion">
@@ -89,9 +105,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'suplementos') {
-        contenido = `
+        `
+  } else if (medicamento === 'suplementos') {
+    contenido = `
             <div class="producto">
                 <img src="ruta/a/imagen7.jpg" alt="Producto de Suplemento">
                 <div class="descripcion">
@@ -102,9 +118,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'fitoterapia') {
-        contenido = `
+        `
+  } else if (medicamento === 'fitoterapia') {
+    contenido = `
             <div class="producto">
                 <img src="ruta/a/imagen8.jpg" alt="Producto de Fitoterapia">
                 <div class="descripcion">
@@ -115,9 +131,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    }   else if (medicamento === 'homeopaticos') {
-        contenido = `
+        `
+  } else if (medicamento === 'homeopaticos') {
+    contenido = `
             <div class="producto">
                 <img src="https://assets1.farmaciasanpablo.com.mx/landings/_blog/natural/230310-medicamentoHomeopatico/medicamento-homeopatico-que-es.jpg" alt="Medicamentos Homeopáticos">
                 <div class="descripcion">
@@ -128,9 +144,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'veterinarios') {
-        contenido = `
+        `
+  } else if (medicamento === 'veterinarios') {
+    contenido = `
             <div class="producto">
                 <img src="https://t2.uc.ltmcdn.com/es/posts/4/6/4/meloxicam_para_perros_para_que_sirve_y_dosis_50464_orig.jpg" alt="Medicamentos para Uso Veterinario">
                 <div class="descripcion">
@@ -141,9 +157,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'personal') {
-        contenido = `
+        `
+  } else if (medicamento === 'personal') {
+    contenido = `
             <div class="producto">
                 <img src="https://img.freepik.com/vector-premium/cuidado-personal-higiene-salud-corporal-articulos-productos-bano_8071-4348.jpg" alt="Productos de Cuidado Personal y Salud">
                 <div class="descripcion">
@@ -154,9 +170,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'urgencia') {
-        contenido = `
+        `
+  } else if (medicamento === 'urgencia') {
+    contenido = `
             <div class="producto">
                 <img src="https://i0.wp.com/enfermerodesimulacion.com/wp-content/uploads/2020/07/Copia-de-la-simulaci%C3%B3n-cl%C3%ADnica-no-es-un-juego-3.png?fit=1120%2C630&ssl=1" alt="Medicamentos de Urgencia">
                 <div class="descripcion">
@@ -167,9 +183,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'especial') {
-        contenido = `
+        `
+  } else if (medicamento === 'especial') {
+    contenido = `
             <div class="producto">
                 <img src="https://www.shutterstock.com/image-vector/3d-realistic-jar-round-pills-260nw-2337616455.jpg" alt="Medicamentos de Venta Especial">
                 <div class="descripcion">
@@ -180,9 +196,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'avanzadas') {
-        contenido = `
+        `
+  } else if (medicamento === 'avanzadas') {
+    contenido = `
             <div class="producto">
                 <img src="https://assets-global.website-files.com/63fc754c9c85979aadede3f3/649ade81c47ab4fa25e45d00_gmps%20terapia%20avanzada%20690.jpg" alt="Medicamentos de Terapia Avanzada">
                 <div class="descripcion">
@@ -193,9 +209,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'diagnostico') {
-        contenido = `
+        `
+  } else if (medicamento === 'diagnostico') {
+    contenido = `
             <div class="producto">
                 <img src="https://lrdiagnostico.com/wp-content/uploads/2024/04/INICIO-LINEAS-DE-PRODUCTO.jpg" alt="Productos de Diagnóstico">
                 <div class="descripcion">
@@ -206,9 +222,9 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } else if (medicamento === 'magistrales') {
-        contenido = `
+        `
+  } else if (medicamento === 'magistrales') {
+    contenido = `
             <div class="producto">
                 <img src="https://biohealthy.com.co/wp-content/uploads/2022/03/formulas-magistrales-biohhealthy.jpeg" alt="Preparaciones Magistrales">
                 <div class="descripcion">
@@ -219,33 +235,38 @@ function mostrartipo(medicamento) {
                 </div>
             </div>
             <button onclick="cargarContenido('inicio')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #6c757d; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
-        `;
-    } 
-    else {
-        // Si no se reconoce el tipo de medicamento, se muestra un mensaje de error o manejo adecuado
-        contenido = `<p>No se encontraron productos para la categoría seleccionada.</p>`;
-    }
+        `
+  } else {
+    // Si no se reconoce el tipo de medicamento, se muestra un mensaje de error o manejo adecuado
+    contenido = `<p>No se encontraron productos para la categoría seleccionada.</p>`
+  }
 
-    main.innerHTML = contenido;
+  main.innerHTML = contenido
 }
 
-
 function enviarCorreo(e) {
-    e.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+  e.preventDefault() // Evita que el formulario se envíe de forma predeterminada
 
-    // Configuración de EmailJS
-    //email.init("am6PjOxJGtF6v654j"); // Reemplaza YOUR_USER_ID con tu ID de usuario de EmailJS
+  // Configuración de EmailJS
+  //email.init("am6PjOxJGtF6v654j"); // Reemplaza YOUR_USER_ID con tu ID de usuario de EmailJS
 
-    // Recopilar datos del formulario
-    var nombre = document.getElementById("nombre").value;
-    var email = document.getElementById("email").value;
-    var mensaje = document.getElementById("mensaje").value;
+  // Recopilar datos del formulario
+  var nombre = document.getElementById('nombre').value
+  var email = document.getElementById('email').value
+  var mensaje = document.getElementById('mensaje').value
 
-    console.log(nombre,email,mensaje)
+  console.log(nombre, email, mensaje)
 
-    axios.post("https://server-farmacy.onrender.com/sendEmail",{nombre,email,mensaje}).then(console.log).catch(console.log)
-    // Enviar el correo electrónico utilizando EmailJS
-    /*
+  axios
+    .post('https://server-farmacy.onrender.com/sendEmail', {
+      nombre,
+      email,
+      mensaje,
+    })
+    .then(console.log)
+    .catch(console.log)
+  // Enviar el correo electrónico utilizando EmailJS
+  /*
     email.send("service_ef6i3eb", "template_yxz8nyd", {
         from_name: nombre,
         from_email: email,
@@ -259,17 +280,17 @@ function enviarCorreo(e) {
         console.error("Error al enviar el correo", error);
         alert("Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.");
     });*/
-    // Limpiar el formulario después del envío
-    //document.getElementById("contact-form").reset();
+  // Limpiar el formulario después del envío
+  //document.getElementById("contact-form").reset();
 }
 //-----------------------------------------------------------
 function mostrarServicio(servicio) {
-    var main = document.querySelector('main');
-    var contenido = '';
+  var main = document.querySelector('main')
+  var contenido = ''
 
-    switch (servicio) {
-        case 'venta':
-            contenido = `
+  switch (servicio) {
+    case 'venta':
+      contenido = `
                 <div class="service-container">
                     <h1>BUENASALUD: Tu Farmacia Online de Confianza</h1>
                     <img src="https://blogs.portafolio.co/desde-la-red/wp-content/uploads/sites/75/2019/11/Requisitos-legales-para-vender-medicamentos-en-una-farmacia-online.jpg" alt="Farmacia Online" style="max-width: 100%;">
@@ -284,10 +305,10 @@ function mostrarServicio(servicio) {
                     </ul>
                     <button onclick="cargarContenido('servicios')" style="display: inline-block; padding: 10px 20px; margin-top: 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
                 </div>
-            `;
-            break;
-        case 'consulta':
-            contenido = `
+            `
+      break
+    case 'consulta':
+      contenido = `
                 <div class="service-container">
                     <h1>Consulta Farmacéutica en Línea</h1>
                     <img src="https://static.vecteezy.com/system/resources/previews/008/157/669/non_2x/online-pharmacy-concept-pharmacist-gives-pill-customer-buys-medication-in-smartphone-screen-online-doctor-consultation-remote-drugstore-illustration-healthcare-banner-for-app-web-vector.jpg" alt="Consulta Farmacéutica en Línea" style="max-width: 100%;">
@@ -301,10 +322,10 @@ function mostrarServicio(servicio) {
                     </ul>
                     <button onclick="cargarContenido('servicios')" style="display: inline-block; padding: 10px 20px; margin-top: 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
                 </div>
-            `;
-            break;
-        case 'reserva':
-            contenido = `
+            `
+      break
+    case 'reserva':
+      contenido = `
                 <div class="service-container">
                     <h1>Reserva y Recarga de Medicamentos</h1>
                     <img src="https://static.vecteezy.com/system/resources/previews/005/961/619/non_2x/online-pharmacy-word-concepts-banner-medication-medicine-eshopping-online-consultant-presentation-website-isolated-lettering-typography-idea-with-linear-icons-outline-illustration-vector.jpg" alt="Reserva y Recarga de Medicamentos" style="max-width: 100%;">
@@ -318,10 +339,10 @@ function mostrarServicio(servicio) {
                     </ul>
                     <button onclick="cargarContenido('servicios')" style="display: inline-block; padding: 10px 20px; margin-top: 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
                 </div>
-            `;
-            break;
-        case 'informacion':
-            contenido = `
+            `
+      break
+    case 'informacion':
+      contenido = `
                 <div class="service-container">
                     <h1>Información sobre Salud y Bienestar</h1>
                     <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528" alt="Información sobre Salud y Bienestar" style="max-width: 100%;">
@@ -335,72 +356,72 @@ function mostrarServicio(servicio) {
                     </ul>
                     <button onclick="cargarContenido('servicios')" style="display: inline-block; padding: 10px 20px; margin-top: 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">Volver atrás</button>
                 </div>
-            `;
-            break;
-            //------------------------------------------ACERCA DE NOSOTROS----------------------
-            case 'Edison':
-                contenido = `
+            `
+      break
+    //------------------------------------------ACERCA DE NOSOTROS----------------------
+    case 'Edison':
+      contenido = `
                     <div class="service-container">
                         <img style="border-radius: 50%; width: 15%; display: block; margin: 0 auto;" src="https://scontent.fuio10-1.fna.fbcdn.net/v/t39.30808-6/426379216_3293036634330033_3850189104314073076_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=BWSMyAMFRpcQ7kNvgERheKd&_nc_ht=scontent.fuio10-1.fna&oh=00_AYCpaRbj29EAYwXdF4n6jyOu-mNJ1FJqAGLeE2DHK9mrxg&oe=666BE379" alt="Edison Barrera">
                         <h1 style="text-align: center;">Edison Barrera</h1>
                         <p>Es un desarrollador con amplia experiencia en la creación de aplicaciones innovadoras. Ha trabajado en varios proyectos de alto impacto y se especializa en el desarrollo de soluciones tecnológicas avanzadas para mejorar el rendimiento deportivo.</p>
                         <button onclick="cargarContenido('acerca')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Volver atrás</button>
                     </div>
-                `;
-            break;
-            case 'Jennifer':
-                contenido = `
+                `
+      break
+    case 'Jennifer':
+      contenido = `
                     <div class="service-container">
                         <img style="border-radius: 50%; width: 15%; display: block; margin: 0 auto;" src="https://scontent.fuio10-1.fna.fbcdn.net/v/t39.30808-6/438086481_7644911172288605_892951878702695438_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=C4l9MwMngjkQ7kNvgFsEk6D&_nc_ht=scontent.fuio10-1.fna&oh=00_AYB0bqazxCNIpzscsFYujqgIDejzgOZbZU3kAa2UG_VWFQ&oe=666BF4AA" alt="Jennifer Faz">
                         <h1 style="text-align: center;">Jennifer Faz</h1>
                         <p>Se especializa en el desarrollo frontend y tiene un gran interés en la experiencia del usuario. Su habilidad para crear interfaces intuitivas y atractivas ha sido clave en la implementación de soluciones innovadoras para nuestros clientes.</p>
                         <button onclick="cargarContenido('acerca')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Volver atrás</button>
                     </div>
-                `;
-            break;
-            case 'Steven':
-                contenido = `
+                `
+      break
+    case 'Steven':
+      contenido = `
                     <div class="service-container">
                         <img style="border-radius: 50%; width: 15%; display: block; margin: 0 auto;" src="https://scontent.fuio10-1.fna.fbcdn.net/v/t39.30808-6/293992534_3108970632709617_1173418998859448657_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=0xgZpeF-j8YQ7kNvgG8_8qS&_nc_ht=scontent.fuio10-1.fna&oh=00_AYDNUz6Z2pckxPPqDPMDtR3mLizMkrUSzoG_7bNtrjycyw&oe=666BFC96" alt="Steven Velez">
                         <h1 style="text-align: center;">Steven Velez</h1>
                         <p>Es un desarrollador con amplia experiencia en la creación de aplicaciones innovadoras. Ha trabajado en varios proyectos de alto impacto y se especializa en el desarrollo de soluciones tecnológicas avanzadas para mejorar el rendimiento deportivo.</p>
                         <button onclick="cargarContenido('acerca')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Volver atrás</button>
                     </div>
-                `;
-            break;
-            case 'Alexi':
-                contenido = `
+                `
+      break
+    case 'Alexi':
+      contenido = `
                     <div class="service-container">
                         <img style="border-radius: 50%; width: 15%; display: block; margin: 0 auto;" src="https://scontent.fuio10-1.fna.fbcdn.net/v/t39.30808-6/448090660_439526802235644_4585318733155341554_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Vm82C-B33NIQ7kNvgGD-yEg&_nc_ht=scontent.fuio10-1.fna&oh=00_AYD5S9sJ_VXMtIhcfErzc08lzxZXOCMvJNRqZu-f2_9k0A&oe=666E7801" alt="Alexi Jimenez">
                         <h1 style="text-align: center;">Alexi Jimenez</h1>
                         <p>Es un desarrollador con amplia experiencia en la creación de aplicaciones innovadoras. Ha trabajado en varios proyectos de alto impacto y se especializa en el desarrollo de soluciones tecnológicas avanzadas para mejorar el rendimiento deportivo.</p>
                         <button onclick="cargarContenido('acerca')" style="display: inline-block; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #007BFF; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; margin-right: 10px;">Volver atrás</button>
                     </div>
-                `;
-            break;
-        default:
-            contenido = '<p>Servicio no encontrado</p>';
-            break;
-    }
+                `
+      break
+    default:
+      contenido = '<p>Servicio no encontrado</p>'
+      break
+  }
 
-    main.innerHTML = contenido;
+  main.innerHTML = contenido
 }
 
 function volverInicio() {
-    // Llama al caso 'inicio' para recargar el contenido inicial
-    switchContent('inicio');
+  // Llama al caso 'inicio' para recargar el contenido inicial
+  switchContent('inicio')
 }
 
 // Función para cargar el contenido dinámico en el <main>
 function cargarContenido(accion) {
-    // Obtener el elemento <main>
-    var main = document.querySelector('main');
-    // Limpiar cualquier contenido existente en el <main>
-    main.innerHTML = '';
-    // Dependiendo de la acción seleccionada, cargar el contenido correspondiente
-    switch (accion) {
-        case 'inicio':
-            main.innerHTML = `
+  // Obtener el elemento <main>
+  var main = document.querySelector('main')
+  // Limpiar cualquier contenido existente en el <main>
+  main.innerHTML = ''
+  // Dependiendo de la acción seleccionada, cargar el contenido correspondiente
+  switch (accion) {
+    case 'inicio':
+      main.innerHTML = `
                 <style>
                     /* Estilos generales */
                     body {
@@ -427,7 +448,7 @@ function cargarContenido(accion) {
                     /* Estilos para la sección de características */
                     .features {
                         display: grid;
-                        grid-template-columns: repeat(4, 1fr);
+                        grid-template-columns: repeat(3, 1fr);
                         gap: 20px;
                         padding: 80px 0;
                         text-align: center;
@@ -489,7 +510,9 @@ function cargarContenido(accion) {
                     <h1 style="text-align: center;">¡Bienvenido a BUENASALUD!</h1>
                     <section class="features">
                         <div class="feature" onclick="mostrartipo('libres')">
+                            <div class="header">
                             <img src="https://www.manipuladosviluz.es/wp-content/uploads/2023/09/tipos-de-medicamentos-OTC.jpg" alt="Medicamentos de Venta Libre (Over-the-Counter, OTC)">
+                            </div>
                             <h1>Medicamentos de Venta Libre</h1>
                         </div>
                         <div class="feature" onclick="mostrartipo('recetados')">
@@ -553,11 +576,11 @@ function cargarContenido(accion) {
                             <h1>Preparaciones Magistrales</h1>
                         </div>
                     </section>
-                </div>`;
-            break;
-        
+                </div>`
+      break
+
     case 'servicios':
-        main.innerHTML = `
+      main.innerHTML = `
         <style>
             /* Estilos para la sección de servicios */
             .services {
@@ -631,10 +654,10 @@ function cargarContenido(accion) {
                     </div>
                 </div>
             </section>
-        </div>`;
-    break;
-        case 'contacto':
-            main.innerHTML = `
+        </div>`
+      break
+    case 'contacto':
+      main.innerHTML = `
         <style>
             /* Estilos generales */
             body {
@@ -713,10 +736,10 @@ function cargarContenido(accion) {
                     <p><strong>Email:</strong> BUENASALUD@empresa.com</p>
                 </div>
             </section>
-        </div>`;
-    break;
+        </div>`
+      break
     case 'acerca':
-    main.innerHTML = `
+      main.innerHTML = `
         <style>
             .about-us {
                 padding: 80px 0;
@@ -865,12 +888,11 @@ function cargarContenido(accion) {
             </section>
         </div>
         
-    `;
-    break;
+    `
+      break
 
-
-        default:
-            // Si la acción no coincide con ninguna, no hacer nada
-            break;
-    }
+    default:
+      // Si la acción no coincide con ninguna, no hacer nada
+      break
+  }
 }

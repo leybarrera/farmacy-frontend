@@ -1,476 +1,485 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <style>
-        /* Estilos para el menú desplegable */
-        .user-info2 {
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-        }
+      /* Estilos para el menú desplegable */
+      .user-info2 {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+      }
 
-        .user-info2 img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
+      .user-info2 img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
 
-        .user-info2 span {
-            font-weight: bold;
-        }
+      .user-info2 span {
+        font-weight: bold;
+      }
 
-        .menu-icon2 {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
+      .menu-icon2 {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
 
-        .menu-icon2 .nav-links {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0;
-            top: 100%;
-        }
+      .menu-icon2 .nav-links {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        right: 0;
+        top: 100%;
+      }
 
-        .menu-icon2:hover .nav-links {
-            display: block;
-        }
+      .menu-icon2:hover .nav-links {
+        display: block;
+      }
 
-        .menu-icon2 .nav-links a {
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            color: black;
-        }
+      .menu-icon2 .nav-links a {
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        color: black;
+      }
 
-        .menu-icon2 .nav-links a:hover {
-            background-color: #ddd;
-        }
+      .menu-icon2 .nav-links a:hover {
+        background-color: #ddd;
+      }
 
-        /* Estilo para el carrito de compras */
-        .cart-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            cursor: pointer;
-        }
+      /* Estilo para el carrito de compras */
+      .cart-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        cursor: pointer;
+      }
 
-        .cart-container .cart-count {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background-color: red;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-        }
+      .cart-container .cart-count {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+      }
 
-        .cart-container .cart-icon {
-            font-size: 24px;
-        }
+      .cart-container .cart-icon {
+        font-size: 24px;
+      }
 
-        /* Ajuste del menú para adaptarse al carrito */
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-        }
+      /* Ajuste del menú para adaptarse al carrito */
+      header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+      }
 
-        .nav-links a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
+      .nav-links a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+      }
 
-        .nav-buttons button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
+      .nav-buttons button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
 
-        .content-container {
-            margin-top: 20px; /* Para evitar que el contenido esté justo detrás del carrito */
-        }
-        /* Estilos adicionales para el carrito y contenido */
-        .cart-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            cursor: pointer;
-        }
+      .content-container {
+        margin-top: 20px; /* Para evitar que el contenido esté justo detrás del carrito */
+      }
+      /* Estilos adicionales para el carrito y contenido */
+      .cart-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        cursor: pointer;
+      }
 
-        .cart-container .cart-count {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background-color: red;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-        }
+      .cart-container .cart-count {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+      }
 
-        .cart-container .cart-icon {
-            font-size: 24px;
-        }
+      .cart-container .cart-icon {
+        font-size: 24px;
+      }
 
-        .cart-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1001;
-        }
+      .cart-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+      }
 
-        .cart-content {
-            background-color: #fff;
-            width: 80%;
-            max-width: 600px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            overflow-y: auto;
-            max-height: 80%;
-        }
+      .cart-content {
+        background-color: #fff;
+        width: 80%;
+        max-width: 600px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+        max-height: 80%;
+      }
 
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
-            margin-bottom: 10px;
-        }
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+        margin-bottom: 10px;
+      }
 
-        .cart-item img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            margin-right: 10px;
-        }
+      .cart-item img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        margin-right: 10px;
+      }
 
-        .cart-item .item-info {
-            flex: 1;
-        }
+      .cart-item .item-info {
+        flex: 1;
+      }
 
-        .cart-item .item-info h3 {
-            margin: 0;
-            font-size: 1.2rem;
-        }
+      .cart-item .item-info h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
 
-        .cart-item .item-info p {
-            margin: 5px 0;
-            color: #666;
-        }
+      .cart-item .item-info p {
+        margin: 5px 0;
+        color: #666;
+      }
 
-        .cart-item .item-actions {
-            display: flex;
-            align-items: center;
-        }
+      .cart-item .item-actions {
+        display: flex;
+        align-items: center;
+      }
 
-        .cart-item .item-actions button {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            margin-left: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+      .cart-item .item-actions button {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        margin-left: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
 
-        .cart-item .item-actions button:hover {
-            background-color: #c82333;
-        }
+      .cart-item .item-actions button:hover {
+        background-color: #c82333;
+      }
 
-        .cart-item .item-actions button i {
-            margin-right: 5px;
-        }
+      .cart-item .item-actions button i {
+        margin-right: 5px;
+      }
 
-        .cart-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 24px;
-            color: #333;
-        }
+      .cart-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        color: #333;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="menu-icon">
-                &#9776; <!-- Puedes cambiar esto a &#8942; para puntos verticales -->
-            </div>
-            <div class="nav-links">
-                <!-- Enlace para la página de inicio -->
-                <a href="#" onclick="cargarContenido('inicio')">Inicio</a>
-                <!-- Enlace para la página de servicios -->
-                <a href="#" onclick="cargarContenido('servicios')">Servicios</a>
-                <!-- Enlace para la página de contacto -->
-                <a href="#" onclick="cargarContenido('contacto')">Contacto</a>
-                <!-- Enlace para la página de acerca de nosotros -->
-                <a href="#" onclick="cargarContenido('acerca')">Acerca de nosotros</a>
-            </div>
-            <div class="user-info2">
-                <img src="https://via.placeholder.com/30" alt="User Icon">
-                <span id="nombreUsuario"></span>
-            </div>
-            <div class="menu-icon2" onclick="toggleMenu()">
-                <i class="fas fa-cog"></i>
-                <div class="nav-links" id="nav-links">
-                    <a href="#">Perfil</a>
-                    <a href="#">Configuración</a>
-                    <a href="#" onclick="cerrarSesion('')">Cerrar Sesión</a>
-                </div>
-            </div>
-        </nav>
+      <nav>
+        <div class="menu-icon">
+          &#9776;
+          <!-- Puedes cambiar esto a &#8942; para puntos verticales -->
+        </div>
+        <div class="nav-links">
+          <!-- Enlace para la página de inicio -->
+          <a href="#" onclick="cargarContenido('inicio')">Inicio</a>
+          <!-- Enlace para la página de servicios -->
+          <a href="#" onclick="cargarContenido('servicios')">Servicios</a>
+          <!-- Enlace para la página de contacto -->
+          <a href="#" onclick="cargarContenido('contacto')">Contacto</a>
+          <!-- Enlace para la página de acerca de nosotros -->
+          <a href="#" onclick="cargarContenido('acerca')">Acerca de nosotros</a>
+        </div>
+        <div class="user-info2">
+          <img src="https://via.placeholder.com/30" alt="User Icon" />
+          <span id="nombreUsuario"></span>
+        </div>
+        <div class="menu-icon2" onclick="toggleMenu()">
+          <i class="fas fa-cog"></i>
+          <div class="nav-links" id="nav-links">
+            <a href="#">Perfil</a>
+            <a href="#">Configuración</a>
+            <a href="#" onclick="cerrarSesion('')">Cerrar Sesión</a>
+          </div>
+        </div>
+      </nav>
     </header>
-    
+
     <!-- Contenedor del carrito -->
     <div class="cart-container" onclick="toggleCart()">
-        <i class="fas fa-shopping-cart cart-icon"></i>
-        <div class="cart-count" id="cart-count">0</div>
+      <i class="fas fa-shopping-cart cart-icon"></i>
+      <div class="cart-count" id="cart-count">0</div>
     </div>
-    
+
     <div class="content-container"></div>
-    <main>
-    </main>
+    <main></main>
     <!-- Contenido del carrito (oculto inicialmente) -->
     <div class="cart-overlay" id="cart-overlay">
-        <div class="cart-content">
-            <span class="cart-close" onclick="toggleCart()">&times;</span>
-            <h2>Carrito de Compras</h2>
-            <div id="cart-items">
-                <!-- Aquí se añadirán dinámicamente los elementos del carrito -->
-            </div>
-            <div id="cart-total">
-                <!-- Aquí se mostrará el total del carrito -->
-            </div>
+      <div class="cart-content">
+        <span class="cart-close" onclick="toggleCart()">&times;</span>
+        <h2>Carrito de Compras</h2>
+        <div id="cart-items">
+          <!-- Aquí se añadirán dinámicamente los elementos del carrito -->
         </div>
+        <div id="cart-total">
+          <!-- Aquí se mostrará el total del carrito -->
+        </div>
+      </div>
     </div>
     <footer>
-        <p>&copy; 2024 BUENASALUD. Todos los derechos reservados.</p>
+      <p>&copy; 2024 BUENASALUD. Todos los derechos reservados.</p>
     </footer>
-    
+
     <script src="scripts.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        // Variables globales
-        let carrito = []; // Array para almacenar los productos en el carrito
-    
-        // Función para agregar un producto al carrito
-        function agregarAlCarrito(producto) {
-            carrito.push(producto); // Agregar el producto al array del carrito
-            actualizarContadorCarrito(); // Actualizar el contador del carrito en la UI
-            guardarCarritoEnLocalStorage(); // Guardar el carrito en el localStorage
-        }
-    
-        // Función para actualizar el contador del carrito en la UI
-        function actualizarContadorCarrito() {
-            const cartCountElement = document.getElementById('cart-count');
-            cartCountElement.textContent = carrito.length;
-        }
-    
-        // Función para cargar el carrito desde el localStorage al iniciar la página
-        function cargarCarritoDesdeLocalStorage() {
-            const carritoGuardado = localStorage.getItem('carrito');
-            if (carritoGuardado) {
-                carrito = JSON.parse(carritoGuardado);
-                actualizarContadorCarrito(); // Actualizar el contador del carrito en la UI
-            }
-        }
-    
-        // Función para guardar el carrito en el localStorage
-        function guardarCarritoEnLocalStorage() {
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-        }
-    
-        // Función para mostrar u ocultar el contenido del carrito
-        function toggleCart() {
-            var overlay = document.getElementById('cart-overlay');
-            overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
-    
-            if (overlay.style.display === 'flex') {
-                mostrarContenidoCarrito();
-            }
-        }
-    
-        // Función para mostrar el contenido del carrito en el overlay
-        function mostrarContenidoCarrito() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            cartItemsContainer.innerHTML = ''; // Limpiar el contenedor antes de mostrar los elementos
-    
-            // Mostrar cada elemento del carrito
-            carrito.forEach(item => {
-                const cartItem = document.createElement('div');
-                cartItem.classList.add('cart-item');
-    
-                const itemImage = document.createElement('img');
-                itemImage.src = item.imagen;
-                itemImage.alt = item.nombre;
-                cartItem.appendChild(itemImage);
-    
-                const itemInfo = document.createElement('div');
-                itemInfo.classList.add('item-info');
-    
-                const itemName = document.createElement('h3');
-                itemName.textContent = item.nombre;
-                itemInfo.appendChild(itemName);
-    
-                const itemPrice = document.createElement('p');
-                itemPrice.textContent = `Precio: $${item.precio}`;
-                itemInfo.appendChild(itemPrice);
-    
-                const itemQuantity = document.createElement('p');
-                itemQuantity.textContent = `Cantidad: ${item.cantidad}`;
-                itemInfo.appendChild(itemQuantity);
-    
-                cartItem.appendChild(itemInfo);
-    
-                const itemActions = document.createElement('div');
-                itemActions.classList.add('item-actions');
-    
-                const removeButton = document.createElement('button');
-                removeButton.innerHTML = '<i class="fas fa-trash"></i> Eliminar';
-                removeButton.addEventListener('click', () => eliminarDelCarrito(item));
-                itemActions.appendChild(removeButton);
-    
-                cartItem.appendChild(itemActions);
-    
-                cartItemsContainer.appendChild(cartItem);
-            });
-    
-            // Mostrar el total del carrito
-            const cartTotalContainer = document.getElementById('cart-total');
-            const total = calcularTotalCarrito();
-            cartTotalContainer.textContent = `Total: $${total.toFixed(2)}`;
-        }
-    
-        // Función para eliminar un producto del carrito
-        function eliminarDelCarrito(index) {
-            carrito.splice(index, 1); // Eliminar el producto del array
-            actualizarContadorCarrito(); // Actualizar el contador del carrito en la UI
-            guardarCarritoEnLocalStorage(); // Guardar el carrito actualizado en el localStorage
-            mostrarContenidoCarrito(); // Actualizar la vista del carrito
-        }
+      // Variables globales
+      let carrito = [] // Array para almacenar los productos en el carrito
 
+      // Función para agregar un producto al carrito
+      function agregarAlCarrito(producto) {
+        carrito.push(producto) // Agregar el producto al array del carrito
+        actualizarContadorCarrito() // Actualizar el contador del carrito en la UI
+        guardarCarritoEnLocalStorage() // Guardar el carrito en el localStorage
+      }
 
-        // Event listener para cerrar el overlay del carrito al hacer clic fuera de él
-        document.addEventListener('click', function(event) {
-            const cartOverlay = document.getElementById('cart-overlay');
-            const cartContainer = document.querySelector('.cart-container');
+      // Función para actualizar el contador del carrito en la UI
+      function actualizarContadorCarrito() {
+        const cartCountElement = document.getElementById('cart-count')
+        cartCountElement.textContent = carrito.length
+      }
 
-            // Verificar si se hizo clic fuera del carrito y del contenedor del carrito
-            if (!cartContainer.contains(event.target) && event.target !== cartContainer) {
-                cartOverlay.style.display = 'none';
-            }
-        });
-    
-        // Función para calcular el total del carrito
-        function calcularTotalCarrito() {
-            return carrito.reduce((total, item) => total + (item.precio * item.cantidad), 0);
+      // Función para cargar el carrito desde el localStorage al iniciar la página
+      function cargarCarritoDesdeLocalStorage() {
+        const carritoGuardado = localStorage.getItem('carrito')
+        if (carritoGuardado) {
+          carrito = JSON.parse(carritoGuardado)
+          actualizarContadorCarrito() // Actualizar el contador del carrito en la UI
         }
-    
-        // Event listener para cerrar el overlay del carrito al hacer clic en el botón de cerrar
-        document.addEventListener('click', function(event) {
-            if (event.target.classList.contains('cart-close')) {
-                document.getElementById('cart-overlay').style.display = 'none';
-            }
-        });
-    
-        // Event listener para cerrar el overlay del carrito al presionar la tecla Esc
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                document.getElementById('cart-overlay').style.display = 'none';
-            }
-        });
-    
-        // Event listener para añadir al carrito desde cualquier lugar de la página (ejemplo)
-        document.addEventListener('click', function(event) {
-            if (event.target.classList.contains('add-to-cart-button')) {
-                const producto = {
-                    id: 1, // Identificador único del producto
-                    nombre: 'Producto Ejemplo',
-                    precio: 10.99,
-                    cantidad: 1,
-                    imagen: 'url_de_la_imagen.jpg'
-                };
-                agregarAlCarrito(producto);
-            }
-        });
+      }
 
-        //----------
-        function cargarNombreUsuario() {
-        const nombreUsuario = localStorage.getItem('nombreUsuario');
+      // Función para guardar el carrito en el localStorage
+      function guardarCarritoEnLocalStorage() {
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+      }
+
+      // Función para mostrar u ocultar el contenido del carrito
+      function toggleCart() {
+        var overlay = document.getElementById('cart-overlay')
+        overlay.style.display =
+          overlay.style.display === 'flex' ? 'none' : 'flex'
+
+        if (overlay.style.display === 'flex') {
+          mostrarContenidoCarrito()
+        }
+      }
+
+      // Función para mostrar el contenido del carrito en el overlay
+      function mostrarContenidoCarrito() {
+        const cartItemsContainer = document.getElementById('cart-items')
+        cartItemsContainer.innerHTML = '' // Limpiar el contenedor antes de mostrar los elementos
+
+        // Mostrar cada elemento del carrito
+        carrito.forEach((item) => {
+          const cartItem = document.createElement('div')
+          cartItem.classList.add('cart-item')
+
+          const itemImage = document.createElement('img')
+          itemImage.src = item.imagen
+          itemImage.alt = item.nombre
+          cartItem.appendChild(itemImage)
+
+          const itemInfo = document.createElement('div')
+          itemInfo.classList.add('item-info')
+
+          const itemName = document.createElement('h3')
+          itemName.textContent = item.nombre
+          itemInfo.appendChild(itemName)
+
+          const itemPrice = document.createElement('p')
+          itemPrice.textContent = `Precio: $${item.precio}`
+          itemInfo.appendChild(itemPrice)
+
+          const itemQuantity = document.createElement('p')
+          itemQuantity.textContent = `Cantidad: ${item.cantidad}`
+          itemInfo.appendChild(itemQuantity)
+
+          cartItem.appendChild(itemInfo)
+
+          const itemActions = document.createElement('div')
+          itemActions.classList.add('item-actions')
+
+          const removeButton = document.createElement('button')
+          removeButton.innerHTML = '<i class="fas fa-trash"></i> Eliminar'
+          removeButton.addEventListener('click', () => eliminarDelCarrito(item))
+          itemActions.appendChild(removeButton)
+
+          cartItem.appendChild(itemActions)
+
+          cartItemsContainer.appendChild(cartItem)
+        })
+
+        // Mostrar el total del carrito
+        const cartTotalContainer = document.getElementById('cart-total')
+        const total = calcularTotalCarrito()
+        cartTotalContainer.textContent = `Total: $${total.toFixed(2)}`
+      }
+
+      // Función para eliminar un producto del carrito
+      function eliminarDelCarrito(index) {
+        carrito.splice(index, 1) // Eliminar el producto del array
+        actualizarContadorCarrito() // Actualizar el contador del carrito en la UI
+        guardarCarritoEnLocalStorage() // Guardar el carrito actualizado en el localStorage
+        mostrarContenidoCarrito() // Actualizar la vista del carrito
+      }
+
+      // Event listener para cerrar el overlay del carrito al hacer clic fuera de él
+      document.addEventListener('click', function (event) {
+        const cartOverlay = document.getElementById('cart-overlay')
+        const cartContainer = document.querySelector('.cart-container')
+
+        // Verificar si se hizo clic fuera del carrito y del contenedor del carrito
+        if (
+          !cartContainer.contains(event.target) &&
+          event.target !== cartContainer
+        ) {
+          cartOverlay.style.display = 'none'
+        }
+      })
+
+      // Función para calcular el total del carrito
+      function calcularTotalCarrito() {
+        return carrito.reduce(
+          (total, item) => total + item.precio * item.cantidad,
+          0
+        )
+      }
+
+      // Event listener para cerrar el overlay del carrito al hacer clic en el botón de cerrar
+      document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('cart-close')) {
+          document.getElementById('cart-overlay').style.display = 'none'
+        }
+      })
+
+      // Event listener para cerrar el overlay del carrito al presionar la tecla Esc
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          document.getElementById('cart-overlay').style.display = 'none'
+        }
+      })
+
+      // Event listener para añadir al carrito desde cualquier lugar de la página (ejemplo)
+      document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('add-to-cart-button')) {
+          const producto = {
+            id: 1, // Identificador único del producto
+            nombre: 'Producto Ejemplo',
+            precio: 10.99,
+            cantidad: 1,
+            imagen: 'url_de_la_imagen.jpg',
+          }
+          agregarAlCarrito(producto)
+        }
+      })
+
+      //----------
+      function cargarNombreUsuario() {
+        const nombreUsuario = localStorage.getItem('nombreUsuario')
         if (nombreUsuario) {
-            document.getElementById('nombreUsuario').textContent = nombreUsuario;
+          document.getElementById('nombreUsuario').textContent = nombreUsuario
         }
-    }
-        // Función para cerrar sesión
-        function cerrarSesion() {
-            // Limpiar el localStorage al cerrar sesión
-            localStorage.removeItem('nombreUsuario');
-            // Limpiar el carrito al cerrar sesión
-            localStorage.removeItem('carrito');
+      }
+      // Función para cerrar sesión
+      function cerrarSesion() {
+        // Limpiar el localStorage al cerrar sesión
+        localStorage.removeItem('nombreUsuario')
+        // Limpiar el carrito al cerrar sesión
+        localStorage.removeItem('carrito')
 
-            // Redirigir al usuario a la página de inicio (index.html)
-            window.location.href = 'index.html';
-        }
-         // Inicializar al cargar la página
-        window.addEventListener('load', function() {
-            cargarNombreUsuario(); // Cargar el nombre de usuario almacenado en el localStorage
-        });
-    </script>    
-</body>
+        // Redirigir al usuario a la página de inicio (index.html)
+        window.location.href = 'index.html'
+      }
+      // Inicializar al cargar la página
+      window.addEventListener('load', function () {
+        cargarNombreUsuario() // Cargar el nombre de usuario almacenado en el localStorage
+      })
+    </script>
+  </body>
 </html>
